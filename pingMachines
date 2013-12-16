@@ -56,14 +56,14 @@ reachHosts() {
             
             # cannot ping: report network issue
             [[ $($PING $host) ]] || {
-                Xdialog --title "Ping Machines" --infobox "Cannot ping host $host" 20 1000 4000
+                Xdialog --display :0 --title "Ping Machines" --infobox "Cannot ping host $host" 20 1000 4000
                 $LOGGER "ping failed on $host"
                 continue
             }
 
             # can ping: report ssh authentication issue
-            Xdialog --title "Ping Machines" --infobox "Cannot log using SSH on host $host" 10 80 4000
-            $LOGGER "ping failed on $host"
+            Xdialog --display :0 --title "Ping Machines" --infobox "Cannot log using SSH on host $host" 10 80 4000
+            $LOGGER "ssh failed on $host"
         }
     done
 }
