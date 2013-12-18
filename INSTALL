@@ -1,0 +1,8 @@
+Just unpack this stuff at ~/.pingMachines
+
+and set your crontab to:
+
+# Minute   Hour   Day of Month       Month          Day of Week        Command    
+# (0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)                
+*/15  *   *   *   *   $HOME/.pingMachines/pingMachines
+
